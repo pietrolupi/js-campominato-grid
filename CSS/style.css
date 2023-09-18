@@ -22,10 +22,23 @@
   align-items: center;
   color: white;
   font-size: 25px;
-  width: calc(100% / 10);
-  height: calc(100% / 10);
   aspect-ratio: 1/1;
   border: 2px solid white;
   cursor: pointer;
+}
+
+.easy.square{
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.medium.square.square{
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.hard.square{
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }
 

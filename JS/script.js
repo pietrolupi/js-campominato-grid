@@ -12,7 +12,7 @@
 const container = document.querySelector('.container-custom')
 
 const diffSelector = document.querySelector('.diff-selector')
-
+let difficulty;
 
 const startBtn = document.querySelector('.start-btn');
 
@@ -21,7 +21,7 @@ reset(container);
 
 startBtn.addEventListener('click',function(){
   //al click seleziono la difficoltà e la leggo
-  let difficulty = diffSelector.value;
+  difficulty = diffSelector.value;
   console.log(difficulty);
 
   //creo vari percorsi per ogni difficoltà
@@ -29,14 +29,22 @@ startBtn.addEventListener('click',function(){
   if(difficulty === 'Select difficulty mode:'){
     alert('SELEZIONA UNA DIFFICOLTA PER PROCEDERE!')
   }else if(difficulty == 1){
+    reset(container);
     for(let i = 1; i <= 100; i++){
-      stampSquare();
+      stampSquare('easy');
     }
 
   }else if(difficulty == 2){
-    alert('difficoltà 2')
+    reset(container);
+    for(let i = 1; i <= 81; i++){
+      stampSquare('medium');
+    }
   }else{
-    alert('difficoltà 3')
+    reset(container);
+    for(let i = 1; i <= 49; i++){
+      stampSquare('hard');
+    }
+      stampSquare('hard');
   }
 
 
@@ -49,8 +57,19 @@ function reset(whatToReset){
   whatToReset.innerHTML = '';
 }
 //funzione per stampare i quadrati
-function stampSquare(){
+function stampSquare(difficultyLevel){
   let square = document.createElement('div');
   square.classList.add('square')
+
+  if(difficultyLevel === 'easy'){
+    square.classList.add('easy')
+  }else if(difficultyLevel === 'medium'){
+    square.classList.add('medium')
+  }else{
+    square.classList.add('hard')
+  }
+
+
+
   container.append(square);
 }
