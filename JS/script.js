@@ -17,6 +17,7 @@ let squareNumber;
 const startBtn = document.querySelector('.start-btn');
 
 reset(container);
+startMessage();
 
 
 startBtn.addEventListener('click',function(){
@@ -29,6 +30,7 @@ startBtn.addEventListener('click',function(){
   if(difficulty === 'Select difficulty mode:'){
     reset(container)
     alert('SELEZIONA UNA DIFFICOLTA PER PROCEDERE!')
+    startMessage();
   }else if(difficulty == 1){
     reset(container);
     for(let i = 1; i <= 100; i++){
@@ -80,4 +82,8 @@ function stampSquare(difficultyLevel){
   square.innerHTML += `<span> ${squareNumber}</span>
   `
   container.append(square);
+}
+
+function startMessage(){
+  container.innerHTML += `<h1 id="start-playing">SELEZIONA UNA DIFFICOLTA E COMINCIA A GIOCARE</h1>`
 }

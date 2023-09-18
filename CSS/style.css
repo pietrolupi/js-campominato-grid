@@ -8,12 +8,19 @@
   flex-direction: column;
 }
 
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .container-custom{
   height: 800px;
   width: 800px;
   display: flex;  
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   background-color: #a50a55c6;
+  text-align: center;
 }
 
 .square{
@@ -53,4 +60,11 @@
 
 .square.activeSquare span{
   display: block;
+}
+
+#start-playing{
+  color: white;
+  margin: 0 50px;
+  font-size: 70px;
+  font-weight: 900;
 }
