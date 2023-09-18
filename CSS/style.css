@@ -1,0 +1,31 @@
+
+
+.main-wrapper{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #a50a55c6;
+  flex-direction: column;
+}
+
+.container-custom{
+  height: 800px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #404eed;
+}
+
+.square{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  aspect-ratio: 1/1;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
