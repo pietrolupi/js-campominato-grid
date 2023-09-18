@@ -13,7 +13,7 @@ const container = document.querySelector('.container-custom')
 
 const diffSelector = document.querySelector('.diff-selector')
 let difficulty;
-
+let squareNumber;
 const startBtn = document.querySelector('.start-btn');
 
 reset(container);
@@ -24,27 +24,31 @@ startBtn.addEventListener('click',function(){
   difficulty = diffSelector.value;
   console.log(difficulty);
 
-  //creo vari percorsi per ogni difficoltà
+  //creo vari percorsi per ogni difficoltà (ogni IF prima di tutto resetta, poi fa partire un ciclo che ripete stampSquare tot volte)
 
   if(difficulty === 'Select difficulty mode:'){
+    reset(container)
     alert('SELEZIONA UNA DIFFICOLTA PER PROCEDERE!')
   }else if(difficulty == 1){
     reset(container);
     for(let i = 1; i <= 100; i++){
+      squareNumber = i;
       stampSquare('easy');
     }
 
   }else if(difficulty == 2){
     reset(container);
     for(let i = 1; i <= 81; i++){
+      squareNumber = i;
       stampSquare('medium');
     }
   }else{
     reset(container);
     for(let i = 1; i <= 49; i++){
+      squareNumber = i;
       stampSquare('hard');
     }
-      stampSquare('hard');
+      
   }
 
 
@@ -60,7 +64,7 @@ function reset(whatToReset){
 function stampSquare(difficultyLevel){
   let square = document.createElement('div');
   square.classList.add('square')
-
+  
   if(difficultyLevel === 'easy'){
     square.classList.add('easy')
   }else if(difficultyLevel === 'medium'){
@@ -69,7 +73,11 @@ function stampSquare(difficultyLevel){
     square.classList.add('hard')
   }
 
+  square.addEventListener('click', function(){
+    square.classList.toggle('activeSquare')
+  })
 
-
+  square.innerHTML += `<span> ${squareNumber}</span>
+  `
   container.append(square);
 }

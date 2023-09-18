@@ -4,23 +4,23 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #a50a55c6;
+  background-color:#23272a;
   flex-direction: column;
 }
 
 .container-custom{
   height: 800px;
   width: 800px;
-  display: flex;
+  display: flex;  
   flex-wrap: wrap;
-  background-color: #404eed;
+  background-color: #a50a55c6;
 }
 
 .square{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgba(255, 255, 255, 0);
   font-size: 25px;
   aspect-ratio: 1/1;
   border: 2px solid white;
@@ -42,3 +42,15 @@
   height: calc(100% / 7);
 }
 
+.activeSquare{
+  color: white;
+  background-color: #404eed;
+}
+
+.square span{
+  display: none;
+}
+
+.square.activeSquare span{
+  display: block;
+}
